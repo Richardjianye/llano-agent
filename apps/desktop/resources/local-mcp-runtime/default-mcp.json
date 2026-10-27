@@ -1,0 +1,25 @@
+{
+  "web": { "backend": "local-open-websearch" },
+  "plugins": { "bundled_dirs": ["${LLANO_LOCAL_MCP_ROOT}/default-plugins"] },
+  "mcp_servers": {
+    "llano_websearch": {
+      "display_name": "本机网页搜索",
+      "description": "在当前客户端搜索并读取公开网页",
+      "inherit_secret_sources": false,
+      "command": "${LLANO_LOCAL_MCP_NODE}",
+      "args": ["${LLANO_LOCAL_MCP_ROOT}/node_modules/open-websearch/build/llano-stdio.mjs"],
+      "env": {
+        "ELECTRON_RUN_AS_NODE": "1",
+        "MODE": "stdio",
+        "SEARCH_MODE": "request"
+      },
+      "timeout": 30,
+      "connect_timeout": 10,
+      "tools": {
+        "include": ["search", "fetchWebContent"],
+        "resources": false,
+        "prompts": false
+      }
+    }
+  }
+}

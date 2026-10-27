@@ -1,0 +1,97 @@
+# 网关服务端依赖锁 —— requirements.txt 的可复现版本
+#
+# ## 这份文件是从哪来的
+#
+# 2026-08-27 从**测试服 192.168.30.108 上正在跑的那个 venv** `pip freeze` 出来的
+# （`C:\Users\developer\Desktop\gateway\server\.venv`，Python 3.14.4），
+# 不是在开发机上重新解析一遍。理由很直接：那套版本是已经跑起来、
+# 且 `pip check` 干净的一套；开发机上重装一次得到的是「今天的最新」，
+# 那正是 requirements.txt 不锁版本时的老问题。
+#
+# ## 怎么用
+#
+# 部署一律用这份，不要用 requirements.txt：
+#
+#     pip install -r requirements.lock.txt
+#
+# requirements.txt 保留着，它记的是「我们直接依赖什么、为什么」——
+# 加一个新依赖改那份，然后重新生成这份。两份不是二选一。
+#
+# ## 为什么有 environment marker
+#
+# 上面那个 venv 是 Windows 的，freeze 出来会有两类偏差，直接照抄会在 Linux 上出错：
+#
+# - `colorama` / `win32_setctime` 只有 win32 才需要（loguru、click 的平台依赖）。
+#   没有 marker 的话 Linux 上也会去装，装得上，但为什么装谁也说不清。
+# - `uvloop` 反过来 —— `uvicorn[standard]` 在非 Windows 上才拉它，
+#   所以它**不在** Windows 的 freeze 里。照抄的结果是 Linux/容器上
+#   uvicorn 静默回落到 asyncio 事件循环：跑得起来，只是慢，而且不报任何东西。
+#   这一条是补上去的，版本按 cp314 有 manylinux wheel 挑的（0.22.1）。
+#
+# ## pytest 为什么在这里
+#
+# 因为 requirements.txt 里就有。这份是它的锁版本，不是「生产依赖清单」，
+# 保持一一对应比少装两个包重要。容器里想去掉，用 `--no-deps` 另列一份，
+# 别在这份上手删 —— 手删的那次一定不会同步回 requirements.txt。
+
+aiohappyeyeballs==2.7.1
+aiohttp==3.14.3
+aiomysql==0.3.2
+aiosignal==1.4.0
+aiosqlite==0.22.1
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anyio==4.14.2
+attrs==26.1.0
+bcrypt==5.0.0
+certifi==2026.7.22
+cffi==2.1.1
+click==8.4.2
+colorama==0.4.6 ; sys_platform == "win32"
+cryptography==50.0.1
+ecdsa==0.19.2
+fastapi==0.141.1
+frozenlist==1.8.0
+greenlet==3.5.5
+gunicorn==26.2.0
+h11==0.16.0
+hiredis==3.4.1
+httpcore==1.0.9
+httptools==0.8.0
+httpx==0.28.1
+idna==3.19
+iniconfig==2.3.0
+loguru==0.7.3
+multidict==6.7.1
+packaging==26.3
+pillow==12.3.0
+pluggy==1.6.0
+propcache==0.5.2
+pyasn1==0.6.4
+pycparser==3.0
+pydantic==2.13.4
+pydantic-settings==2.15.0
+pydantic_core==2.46.4
+Pygments==2.21.0
+PyMySQL==1.2.0
+pytest==9.1.1
+pytest-asyncio==1.4.0
+python-dotenv==1.2.3
+python-jose==3.5.0
+python-multipart==0.0.32
+PyYAML==6.0.3
+redis==8.1.0
+rsa==4.9.1
+six==1.17.0
+SQLAlchemy==2.0.52
+starlette==1.6.0
+typing-inspection==0.4.4
+typing_extensions==4.16.0
+uvicorn==0.52.4
+watchfiles==1.2.0
+websockets==17.0.1
+win32_setctime==1.2.0 ; sys_platform == "win32"
+yarl==1.24.5
+
+# 非 Windows 才需要 —— 见文件头「为什么有 environment marker」
+uvloop==0.22.1 ; sys_platform != "win32"

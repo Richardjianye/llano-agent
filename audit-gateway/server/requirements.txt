@@ -1,0 +1,37 @@
+fastapi
+uvicorn[standard]
+gunicorn
+
+# 配置管理
+pydantic
+pydantic-settings
+python-dotenv
+
+# 数据库
+sqlalchemy[asyncio]
+aiomysql
+
+# Redis
+redis[hiredis]
+
+# JWT & 密码
+python-jose[cryptography]
+bcrypt
+# 外部凭证可逆加密（Fernet），见 utils/secret_box.py
+cryptography
+
+# 日志
+loguru
+
+# 静态文件 & 图片处理（可选）
+Pillow
+python-multipart
+
+# HTTP 客户端（转发上游用）
+aiohttp
+httpx
+
+# 测试
+pytest
+pytest-asyncio
+aiosqlite  # 部门目录 SQL 集成测试

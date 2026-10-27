@@ -1,0 +1,34 @@
+# 构建上下文里要排掉的东西。
+# 这份清单与 DEPLOY.md 第一节的「不要带」是同一件事的两种写法，改一处要同步另一处。
+
+# ---- 密钥。绝不能进镜像层 ----
+# 镜像层是不可变的：.env 一旦被 COPY 进去，后面再 rm 也还在历史层里，
+# 谁 pull 到这个镜像谁就有这套生产密钥。配置一律走环境变量。
+server/.env
+server/.env.*
+client/.env
+client/.env.*
+
+# ---- 运行期数据，不是代码 ----
+# 会话附件与头像。带过去等于把开发机上的聊天附件搬到服务器。
+server/static/audit/
+server/static/avatar/
+
+# ---- 构建产物与缓存 ----
+# 前端在镜像第一段里现构建，拷本地的 dist 进去只会带来「部署的是哪次构建」说不清。
+client/dist/
+client/node_modules/
+server/__pycache__/
+**/__pycache__/
+**/*.py[cod]
+.venv/
+server/.venv/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# ---- 用不上的 ----
+server/tests/
+server/scripts/e2e/
+**/.DS_Store
+**/*.log

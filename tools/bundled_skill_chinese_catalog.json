@@ -1,0 +1,822 @@
+{
+  "schema_version": 1,
+  "categories": {
+    "apple": "苹果应用",
+    "autonomous-ai-agents": "智能体协作",
+    "creative": "创意设计",
+    "devops": "开发运维",
+    "email": "邮件管理",
+    "github": "代码托管",
+    "media": "媒体处理",
+    "mlops": "模型开发与部署",
+    "note-taking": "笔记管理",
+    "productivity": "办公效率",
+    "research": "研究与检索",
+    "smart-home": "智能家居",
+    "social-media": "社交媒体",
+    "software-development": "软件开发",
+    "general": "通用技能"
+  },
+  "skills": {
+    "apple/apple-notes": {
+      "name": "apple-notes",
+      "display_name": "苹果备忘录",
+      "description": "通过命令行创建、搜索和编辑苹果备忘录。",
+      "source_description": "Manage Apple Notes via memo CLI: create, search, edit.",
+      "source_display_name": "",
+      "source_sha256": "1ba042cb17e3aca06a68415526e926ada464bf873c8592c3326125cd72cb397f",
+      "category": "apple",
+      "source_body_sha256": "c16b17d8efe42486a27b4b42962ccd40967c8bfa8b4f437fdc908adcdb1affc0"
+    },
+    "apple/apple-reminders": {
+      "name": "apple-reminders",
+      "display_name": "苹果提醒事项",
+      "description": "添加、查看和完成苹果提醒事项。",
+      "source_description": "Apple Reminders via remindctl: add, list, complete.",
+      "source_display_name": "",
+      "source_sha256": "ee5084f2d7ec196488bef2c74248fb3d8328d1b2e3277ddda3f0de9da6fc7131",
+      "category": "apple",
+      "source_body_sha256": "97eb32678e3c48762c81d40328a065e34d18cdd0e73d1eded79d20489dccb0a7"
+    },
+    "apple/findmy": {
+      "name": "findmy",
+      "display_name": "苹果设备查找",
+      "description": "在苹果电脑上查找苹果设备与物品追踪器。",
+      "source_description": "Track Apple devices/AirTags via FindMy.app on macOS.",
+      "source_display_name": "",
+      "source_sha256": "19ec56e3b7f9f0be13c26d99948ed5684d8fb1f9c478da078c19356b5df63f57",
+      "category": "apple",
+      "source_body_sha256": "25def454dcd4f3fb717d4c4538243d6f840f6e35cbb8d4171ac19f28c52e44e1"
+    },
+    "apple/imessage": {
+      "name": "imessage",
+      "display_name": "苹果消息收发",
+      "description": "在苹果电脑上通过命令行收发短信和苹果消息。",
+      "source_description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
+      "source_display_name": "",
+      "source_sha256": "bc68b1648e301409bc25b1084ec26766213ca9f3c1b2fd3d3d6ebe3dbde9e967",
+      "category": "apple",
+      "source_body_sha256": "96f8854594a997c7a5177d51e567f6e45db6f03f2d15045e33a689adef92b160"
+    },
+    "autonomous-ai-agents/claude-code": {
+      "name": "claude-code",
+      "display_name": "代码代理委派",
+      "description": "把功能开发、代码审查等任务委派给代码代理。",
+      "source_description": "Delegate coding to Claude Code CLI (features, PRs).",
+      "source_display_name": "",
+      "source_sha256": "73d09c7331664930c118aac29c09e70835606ecb46bb87895bf6a53e7ae4f8fa",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "bca6aa0b05b75cbfa67f0c8d9a8bcdb48889ac2f7242413c1ee3c4f9e517d265"
+    },
+    "autonomous-ai-agents/codex": {
+      "name": "codex",
+      "display_name": "编程助手委派",
+      "description": "通过编程助手命令行委派功能开发与代码审查。",
+      "source_description": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+      "source_display_name": "",
+      "source_sha256": "d5fdbcccde8ba7ac677c69f959f84cf98085861722990aa91407542232bab7a2",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "2c71d81098fc8d8038cf2e02f1a51c6bc60bd308c540ea266a23c2addda344b7"
+    },
+    "autonomous-ai-agents/computer-use": {
+      "name": "computer-use",
+      "display_name": "后台桌面操作",
+      "description": "在后台操作桌面，尽量避免抢占用户焦点。",
+      "source_description": "Drive the desktop in the background without stealing focus.",
+      "source_display_name": "",
+      "source_sha256": "0965fd31107276ce0f7db0eb2d9257a9908c73892e2d5a47b0d86355d6c50e6e",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "8fcd03dd16b1fbee3c9790639bca39ba67a635519d53671f3db4bffb9ff0da83"
+    },
+    "autonomous-ai-agents/hermes-agent": {
+      "name": "hermes-agent",
+      "display_name": "工作台配置与扩展",
+      "description": "使用、配置、扩展工作台并编排多个智能体。",
+      "source_description": "使用、配置、扩展和编排LLANO Agent.",
+      "source_display_name": "",
+      "source_sha256": "31bc2095a4e986d09a9d72a21581455a0168787a71f0a536c3b6260a4fc44336",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "5a550602e863ce0d3420792a4be4bab2c4657cf5b9a40bf98657efc6448f9b98"
+    },
+    "autonomous-ai-agents/llano-workbench-guide": {
+      "name": "llano-workbench-guide",
+      "display_name": "工作台使用指南",
+      "description": "指导工作台使用与浏览器抓数：账号、技能、专用浏览器配置和操作后备流程。",
+      "source_description": "指导工作台使用与浏览器抓数：账号、技能、专用浏览器配置和操作后备流程。",
+      "source_display_name": "工作台使用指南",
+      "source_sha256": "1458229a0eb5f55d89e28d0c313ce3ed40b0ad3c2c03089dc70c2d0948f83fe0",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "09b6015dac7fbb9caff2cdcc8c9fcb6521e8d59a11f4686c626cd35a78b79866"
+    },
+    "autonomous-ai-agents/merge-reconciler": {
+      "name": "merge-reconciler",
+      "display_name": "合并冲突协调",
+      "description": "以独立第三方视角协调多个智能体的代码合并冲突。",
+      "source_description": "Neutral third-party resolution of agent merge conflicts.",
+      "source_display_name": "",
+      "source_sha256": "24ffd1be973b0e884876fe0db9f49783fffe6a2337a4e74a83cdd895cb6fce23",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "d70988252c4ea80dcb6b30fc1d3918ccead5cdb126a320d70f12c02c58d155f6"
+    },
+    "autonomous-ai-agents/opencode": {
+      "name": "opencode",
+      "display_name": "开源编程代理委派",
+      "description": "通过开源编程代理命令行委派开发与代码审查。",
+      "source_description": "Delegate coding to OpenCode CLI (features, PR review).",
+      "source_display_name": "",
+      "source_sha256": "07037839e129d8b50f6c8f85f08fcb6bc8109aab2774274bc137d2c63f50a624",
+      "category": "autonomous-ai-agents",
+      "source_body_sha256": "1b53abd5bb114bf3e266cbd24b6d656de672bc77bfc2ac32de558194b43e43f8"
+    },
+    "creative/architecture-diagram": {
+      "name": "architecture-diagram",
+      "display_name": "系统架构图",
+      "description": "制作深色风格的系统、云服务和基础设施架构图。",
+      "source_description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+      "source_display_name": "",
+      "source_sha256": "0e7e2736aafe052e409c2ad27863d51ef3007c116711e584033787ccb5d99d3f",
+      "category": "creative",
+      "source_body_sha256": "e309f6321eb7d3dfb3cc79e6dde96f6b745cf7cc968268b516d2967b4bd44482"
+    },
+    "creative/ascii-art": {
+      "name": "ascii-art",
+      "display_name": "字符画创作",
+      "description": "生成字符文字、装饰框和图片转字符画。",
+      "source_description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+      "source_display_name": "",
+      "source_sha256": "d6a245f13c450aa6868acec2e85e421c2f824db213d846042c504d70bf13dd5b",
+      "category": "creative",
+      "source_body_sha256": "d7d5b2c79192794ceb789c490f83ba166d860deb43f207706b230df4b2de6a9e"
+    },
+    "creative/ascii-video": {
+      "name": "ascii-video",
+      "display_name": "字符动画制作",
+      "description": "将视频和音频转换为彩色字符动画或动态图。",
+      "source_description": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+      "source_display_name": "",
+      "source_sha256": "3bd3f39985a52954e2693866608bd8105f4dc0efbca5b6baa3045c2b641bda26",
+      "category": "creative",
+      "source_body_sha256": "bca218cb80c5f892f51a07ead35a8fc88815f425abec751ba26022fc61630eac"
+    },
+    "creative/baoyu-infographic": {
+      "name": "baoyu-infographic",
+      "display_name": "信息图制作",
+      "description": "根据内容选择布局与视觉风格，制作信息图。",
+      "source_description": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
+      "source_display_name": "",
+      "source_sha256": "a4f1ac729fce9e127c4cf0e51ddeb1b7219a6b04296051750080649c8196ea69",
+      "category": "creative",
+      "source_body_sha256": "83306eb8d33c3c1ccc7cc72e02ba3d06dcccc5d33b844c45177c7c32df1d50b1"
+    },
+    "creative/claude-design": {
+      "name": "claude-design",
+      "display_name": "网页作品设计",
+      "description": "制作单页网页、演示文稿和交互原型。",
+      "source_description": "Design one-off HTML artifacts (landing, deck, prototype).",
+      "source_display_name": "",
+      "source_sha256": "c7cff4cd848b2c4cf20d6d6a6746e83772eb35336a45fdb145e762b7823fa5ed",
+      "category": "creative",
+      "source_body_sha256": "47bd1fcbe256042437761e2db10dd664aef91e5a7b82fa233942163089524a05"
+    },
+    "creative/comfyui": {
+      "name": "comfyui",
+      "display_name": "图像音视频工作流",
+      "description": "通过扩散模型工作流生成图片、视频和音频。",
+      "source_description": "Generate images, video, and audio via diffusion workflows.",
+      "source_display_name": "",
+      "source_sha256": "c9c1e61f1dd2b452dec5f7e6d6e228d5b5d40bfdec0d771b56cd4627863e8108",
+      "category": "creative",
+      "source_body_sha256": "a6fe25dfed741ba782eb3606621879273532e52046a0c30bf01fb069cf94ceb3"
+    },
+    "creative/design-md": {
+      "name": "design-md",
+      "display_name": "设计规范编写",
+      "description": "编写、校验和导出设计令牌规范文件。",
+      "source_description": "Author/validate/export Google's DESIGN.md token spec files.",
+      "source_display_name": "",
+      "source_sha256": "7ed56bba40ffc9573fa51b33b2424f37fb5f774e9ecb7e76e737797afd0b62ae",
+      "category": "creative",
+      "source_body_sha256": "ceaa03dd4b7943bc15e293cda52a26b6c4d58561ea97c6502d5cc38bad5cf5c6"
+    },
+    "creative/excalidraw": {
+      "name": "excalidraw",
+      "display_name": "手绘风格图表",
+      "description": "制作手绘风格的架构图、流程图和时序图。",
+      "source_description": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+      "source_display_name": "",
+      "source_sha256": "cb0558445251fc1087a99dd85b445b83565a98aef6d3e0874641000f7e89e253",
+      "category": "creative",
+      "source_body_sha256": "acd5ea80ab4323b4d40f8d3973e3b05b6f2a7e0e65f1d7211f18d6bee770de1c"
+    },
+    "creative/humanizer": {
+      "name": "humanizer",
+      "display_name": "文字自然化润色",
+      "description": "去除机械化表达，让文字更自然、更有个人风格。",
+      "source_description": "Humanize text: strip AI-isms and add real voice.",
+      "source_display_name": "",
+      "source_sha256": "921ede68e813bf3add8060d29f2a7f248963f4c9d90e1bfb88441522305c1922",
+      "category": "creative",
+      "source_body_sha256": "63bc0ce9cd50bc20c0517c1cfa8901410e2b59c44020e871d8b71a9969834f36"
+    },
+    "creative/manim-video": {
+      "name": "manim-video",
+      "display_name": "数学动画制作",
+      "description": "使用程序制作数学概念与算法讲解动画。",
+      "source_description": "Manim CE animations: 3Blue1Brown math/algo videos.",
+      "source_display_name": "",
+      "source_sha256": "467376469fc2043e2674a843509f8eea52660791e76fb2e142074ecd4abc7e69",
+      "category": "creative",
+      "source_body_sha256": "e966c1a1b27f7ef24681c01c7d1b847821f1abdd994444f69d3e64445b604323"
+    },
+    "creative/p5js": {
+      "name": "p5js",
+      "display_name": "交互艺术创作",
+      "description": "编写生成艺术、着色器和三维交互作品。",
+      "source_description": "p5.js sketches: gen art, shaders, interactive, 3D.",
+      "source_display_name": "",
+      "source_sha256": "f66792d8558a1397e0a83abbc313d89443423228731509bcca10ced38386fa62",
+      "category": "creative",
+      "source_body_sha256": "28f2db92b98ff1933b7b55f2311a33249b8b9090f73382576ba0143526091039"
+    },
+    "creative/popular-web-designs": {
+      "name": "popular-web-designs",
+      "display_name": "网页设计风格参考",
+      "description": "参考常见产品设计系统，制作网页界面。",
+      "source_description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+      "source_display_name": "",
+      "source_sha256": "8b496404a9b9307aa2307aa1a2549d9d1deccf8846dbce8b046902c6ac1dac9d",
+      "category": "creative",
+      "source_body_sha256": "0ec2c16171be5aab8759b100354dd373d16e7ce890710a5bbc20c3dc5014595d"
+    },
+    "creative/pretext": {
+      "name": "pretext",
+      "display_name": "创意网页文字布局",
+      "description": "利用独立文字布局引擎制作创意浏览器演示。",
+      "source_description": "Build creative browser demos with DOM-free text layout.",
+      "source_display_name": "",
+      "source_sha256": "d405893160cfff80cc1943f60fdd103e3c236f4aa627b60c7a8da9b3e56d5fbd",
+      "category": "creative",
+      "source_body_sha256": "9d0fbbfc9327a03a8fd8e3134a4bb389f16ee0a2203171745059da66c7b576d3"
+    },
+    "creative/sketch": {
+      "name": "sketch",
+      "display_name": "界面方案草图",
+      "description": "制作临时网页草图，对比多个界面设计方案。",
+      "source_description": "Throwaway HTML mockups: 2-3 design variants to compare.",
+      "source_display_name": "",
+      "source_sha256": "b06c9bddbe22e72028daa7b7c5120df2372d8462a7887c81d0abd65a7d13cd99",
+      "category": "creative",
+      "source_body_sha256": "c6477b948b693325880f809735c43bcc1dfdc07930b1dd5d3909ee3d078091de"
+    },
+    "creative/songwriting-and-ai-music": {
+      "name": "songwriting-and-ai-music",
+      "display_name": "歌曲创作与音乐提示",
+      "description": "辅助歌词创作，并编写人工智能音乐生成提示。",
+      "source_description": "Songwriting craft and Suno AI music prompts.",
+      "source_display_name": "",
+      "source_sha256": "4e7e2c92a6935a3f2178942dcc2c39f45d734b4902955bb43e7161886a2554c5",
+      "category": "creative",
+      "source_body_sha256": "c38c63441ffde4725d2aca79c5e7d8ccc4badf6d74eeacb97e3d31f7a5c9e5ed"
+    },
+    "creative/touchdesigner-mcp": {
+      "name": "touchdesigner-mcp",
+      "display_name": "互动视觉软件控制",
+      "description": "通过工具协议控制互动视觉软件。",
+      "source_description": "Control TouchDesigner via twozero MCP.",
+      "source_display_name": "",
+      "source_sha256": "a339c5dd2e25ac9682b2eeda86344934a149501b9515a41c136e7eca144e0dd7",
+      "category": "creative",
+      "source_body_sha256": "f4f39d2c61e716b9b7b7ae44f65d9c3845ddd5deeca0fa4b9dc68e352890fddd"
+    },
+    "devops/sdlc-review": {
+      "name": "sdlc-review",
+      "display_name": "开发协作交接审查",
+      "description": "审查项目看板中的交接信息，分派已核实的结果。",
+      "source_description": "Review Kanban handoffs and route verified outcomes.",
+      "source_display_name": "",
+      "source_sha256": "ce90e8a3e145cce69c62880dc85921700110879f9290952d6cec28218503155f",
+      "category": "devops",
+      "source_body_sha256": "c7113fc348edf62e7617928495b9c37e0fd78f6b27d4ac52d7326b2288b06087"
+    },
+    "email/email-inbox-triage": {
+      "name": "email-inbox-triage",
+      "display_name": "收件箱整理",
+      "description": "整理邮件优先级、梳理会话并谨慎起草回复。",
+      "source_description": "Triage an inbox: prioritize threads, draft replies safely.",
+      "source_display_name": "",
+      "source_sha256": "cd57ccc9d563b5186012b41d6bbf52e96c2837c5b8e79d524e8e5e6a44af6021",
+      "category": "email",
+      "source_body_sha256": "f4d6d5cd4de01e972a4d5e98f24a6017771b56387e6b0d51ae7a2289bea77e77"
+    },
+    "email/himalaya": {
+      "name": "himalaya",
+      "display_name": "命令行邮件管理",
+      "description": "通过命令行读取、整理和发送邮件。",
+      "source_description": "Himalaya CLI: IMAP/SMTP email from terminal.",
+      "source_display_name": "",
+      "source_sha256": "aca17672a37d72391df9e61367f217ccfb0b9142bdcb530dfdbc47a2b13b555a",
+      "category": "email",
+      "source_body_sha256": "1eb09266d5599f6296f7777dd94c4849b1dceec3c5355761ea6f6fd540170227"
+    },
+    "github/codebase-inspection": {
+      "name": "codebase-inspection",
+      "display_name": "代码库结构分析",
+      "description": "统计代码行数、语言分布及代码库结构。",
+      "source_description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+      "source_display_name": "",
+      "source_sha256": "87ddc0578d9bcbc80addb34ca045e4263689873ce02b1b73e3d57275ec6315c6",
+      "category": "github",
+      "source_body_sha256": "45445dad2861085f068c997ba1a5e60aa7b35527389c1897aebea49ba4684810"
+    },
+    "github/github-auth": {
+      "name": "github-auth",
+      "display_name": "代码托管登录配置",
+      "description": "配置代码托管访问令牌、密钥与命令行登录。",
+      "source_description": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+      "source_display_name": "",
+      "source_sha256": "cceb00bfa8908c45976316321fb27d99f5a5ffb26cebf8cd6efe69c6ede9c544",
+      "category": "github",
+      "source_body_sha256": "58757225324354735e5b2abdec0e56f251d60e377a03667238c55dc624db6785"
+    },
+    "github/github-code-review": {
+      "name": "github-code-review",
+      "display_name": "合并请求代码审查",
+      "description": "检查代码差异，并提交行内审查意见。",
+      "source_description": "Review PRs: diffs, inline comments via gh or REST.",
+      "source_display_name": "",
+      "source_sha256": "60b91d9d272ce2675e2e4aa2314fd813314d6695c9cc35ada7298243a7ad8e75",
+      "category": "github",
+      "source_body_sha256": "7f97732821eb326736612034f69f52ccf2a6db24ec9ad5d58b0ec23918e84f02"
+    },
+    "github/github-issue-to-pr": {
+      "name": "github-issue-to-pr",
+      "display_name": "问题到合并请求",
+      "description": "将代码托管问题推进为合并请求，并核实测试状态。",
+      "source_description": "Carry a GitHub issue to a verified PR with honest CI state.",
+      "source_display_name": "",
+      "source_sha256": "d422963778ee3fadb182322aa65b742f47a73b456b00fd0935e8ab66caf118e0",
+      "category": "github",
+      "source_body_sha256": "9fc6de82f9b8e65a1611a5e3eee9f6f35cc9118a90a9df3de547cb65f2766dab"
+    },
+    "github/github-issues": {
+      "name": "github-issues",
+      "display_name": "代码托管问题管理",
+      "description": "创建、整理、标记和分派代码托管问题。",
+      "source_description": "Create, triage, label, assign GitHub issues via gh or REST.",
+      "source_display_name": "",
+      "source_sha256": "3b0316d2598d391288b8b3ddffcd1429cb97153476bce99680cb78ea3d1b2c3c",
+      "category": "github",
+      "source_body_sha256": "27ec746fd21e42410ee5b066ff85743d460925613c6f556b4d93242e64ffa198"
+    },
+    "github/github-pr-workflow": {
+      "name": "github-pr-workflow",
+      "display_name": "合并请求流程",
+      "description": "管理分支、提交、合并请求、持续集成和合并。",
+      "source_description": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+      "source_display_name": "",
+      "source_sha256": "f3a35d81e880ea73acde23ce080e1c047b745527eb713a93d40c3c379fb3954d",
+      "category": "github",
+      "source_body_sha256": "f997d8289885a659763965ca0d3b0073f2c43ab41da8a58836c27a5b1b3481a5"
+    },
+    "github/github-repo-management": {
+      "name": "github-repo-management",
+      "display_name": "代码仓库管理",
+      "description": "克隆、创建和派生仓库，管理远程地址与发布版本。",
+      "source_description": "Clone/create/fork repos; manage remotes, releases.",
+      "source_display_name": "",
+      "source_sha256": "27362c86fd1dfcd58e7b65a19f96e438026149de6eaf7a39dc28320353835144",
+      "category": "github",
+      "source_body_sha256": "f31462af9d3341ce6398d67a08788c7423f38f3214bd1c845191285483e7d048"
+    },
+    "media/gif-search": {
+      "name": "gif-search",
+      "display_name": "动态图搜索",
+      "description": "搜索并下载公开动态图。",
+      "source_description": "Search/download GIFs from Tenor via curl + jq.",
+      "source_display_name": "",
+      "source_sha256": "a8349043740a8805d4ebfeb3a21f67ec0e9a9733a84f96403ca142c88a312b5d",
+      "category": "media",
+      "source_body_sha256": "e53c1fec7a74d9ca5c3840e6cc10d064aaaa2d4e93f0b53874e26d2c6a458df4"
+    },
+    "media/songsee": {
+      "name": "songsee",
+      "display_name": "音频特征分析",
+      "description": "通过命令行生成音频频谱并提取声音特征。",
+      "source_description": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+      "source_display_name": "",
+      "source_sha256": "d9d8d1394c630bd83329cd54cd8f18e0e3cd140debe31c3ccf5d9667f054de07",
+      "category": "media",
+      "source_body_sha256": "9c7a9efdbdd1a1aee63389dba7c5a97ec006f859582400aee8d397d4814d4365"
+    },
+    "media/youtube-content": {
+      "name": "youtube-content",
+      "display_name": "视频内容整理",
+      "description": "把公开视频字幕整理为摘要、文章和社交内容。",
+      "source_description": "YouTube transcripts to summaries, threads, blogs.",
+      "source_display_name": "",
+      "source_sha256": "c844239af5d58549b95cfa41970309d6795128bea6b0f6e80beb344409f71bdf",
+      "category": "media",
+      "source_body_sha256": "823dfa1caff35c20349165900b1241ddcd6f17e1a76d7ef9a44065ad37a3d616"
+    },
+    "mlops/evaluation/evaluating-llms-harness": {
+      "name": "evaluating-llms-harness",
+      "display_name": "语言模型评测",
+      "description": "使用评测框架测试语言模型在标准任务上的表现。",
+      "source_description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
+      "source_display_name": "",
+      "source_sha256": "d6f1d357a6561cfe42b7230b8bb449f720212038f180e74a33f9a22c67a963ff",
+      "category": "mlops",
+      "source_body_sha256": "658e2d58d4d28924f0c255b52c3cc8a574cd518e5fa0318e5971cb47315c784c"
+    },
+    "mlops/evaluation/weights-and-biases": {
+      "name": "weights-and-biases",
+      "display_name": "机器学习实验管理",
+      "description": "记录机器学习实验、参数搜索、模型与分析看板。",
+      "source_description": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+      "source_display_name": "",
+      "source_sha256": "bc87d8c94c656ed76aaae6123b1f62c2f0341fcf8e44bb9556efc04c52a2cda1",
+      "category": "mlops",
+      "source_body_sha256": "f90b3dc0ef06583d38c305b5c3fa28349f2d8f0c095220f6deba926e784c6d31"
+    },
+    "mlops/huggingface-hub": {
+      "name": "huggingface-hub",
+      "display_name": "模型与数据集管理",
+      "description": "通过命令行搜索、下载和上传模型与数据集。",
+      "source_description": "HuggingFace hf CLI: search/download/upload models, datasets.",
+      "source_display_name": "",
+      "source_sha256": "68ee2e5ae17e0f2968f8550534f3fce1c7eae461b95cbe1dbc34b8d487665bc5",
+      "category": "mlops",
+      "source_body_sha256": "cb9b74263dd82f17da33b69b1fae6d980e3670debcea5ed6cbf172edb2666df5"
+    },
+    "mlops/inference/llama-cpp": {
+      "name": "llama-cpp",
+      "display_name": "本地模型推理",
+      "description": "运行本地量化模型推理，并查找可用模型。",
+      "source_description": "llama.cpp local GGUF inference + HF Hub model discovery.",
+      "source_display_name": "",
+      "source_sha256": "9c1ef45f6197fbc08b643416d5f2c2e5469dbd45fb01e17cf48a0406ffacf8c2",
+      "category": "mlops",
+      "source_body_sha256": "5a04388c2d06f6a1ea5ec9a995de7b3a27e4636edebc5e4c34c90a6226aa9ab2"
+    },
+    "mlops/inference/serving-llms-vllm": {
+      "name": "serving-llms-vllm",
+      "display_name": "高吞吐模型服务",
+      "description": "部署高吞吐语言模型服务，配置接口与量化。",
+      "source_description": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
+      "source_display_name": "",
+      "source_sha256": "1c64cbeec7e77ffc682da5fcf06d03741f1ecd7055a8f5c2fa12408716644c17",
+      "category": "mlops",
+      "source_body_sha256": "86d80097ad7807b4dfb82811c5674ac89aa15c4a05fd61069abde7c4a346e4e0"
+    },
+    "note-taking/obsidian": {
+      "name": "obsidian",
+      "display_name": "笔记库管理",
+      "description": "读取、搜索、创建和编辑本地笔记库。",
+      "source_description": "Read, search, create, and edit notes in the Obsidian vault.",
+      "source_display_name": "",
+      "source_sha256": "7aea4e8f89f94ab2876d79898d10a5d4cdab31390c53f72ad6934b071179f826",
+      "category": "note-taking",
+      "source_body_sha256": "610eaa9f023a424c231a3881fc9fc0bb123ae9470b94fbd2e4e0454cea2633fb"
+    },
+    "productivity/airtable": {
+      "name": "airtable",
+      "display_name": "在线表格数据库",
+      "description": "通过接口增删改查在线表格记录，筛选并批量更新。",
+      "source_description": "Airtable REST API via curl. Records CRUD, filters, upserts.",
+      "source_display_name": "",
+      "source_sha256": "f6c4215c7fb7ce3a1ca677b55f7b8aa36d51a4667b1a3471249ce558b6870b09",
+      "category": "productivity",
+      "source_body_sha256": "893ecc411ccc9b2e1b4a7649ca19b208bda8151ead89810d384fd3dc37643340"
+    },
+    "productivity/document-to-action-items": {
+      "name": "document-to-action-items",
+      "display_name": "文档任务提取",
+      "description": "从文档提取义务、截止日期和任务，并保留引用。",
+      "source_description": "Extract cited obligations, deadlines, tasks from documents.",
+      "source_display_name": "",
+      "source_sha256": "f114af652272b56c8736172eab8ee870bd8c1004965b698d4ae5c705d8b6e554",
+      "category": "productivity",
+      "source_body_sha256": "565b40b4c939582618bc4f310019446e7b3ab5a92de5b46b866c92e84f7b9e06"
+    },
+    "productivity/docx": {
+      "name": "docx",
+      "display_name": "文字文档处理",
+      "description": "创建、读取、编辑和审阅文字文档与模板。",
+      "source_description": "Create, read, edit, template, and review Word .docx files.",
+      "source_display_name": "",
+      "source_sha256": "9678b14d5e7841d588b969f6a4696cd46bcc46c3e4ac1479edc7656a051aa5ff",
+      "category": "productivity",
+      "source_body_sha256": "cfa327bc8348ef6fea28250dbbcd7237b1bea0662c7e7139e53bd746c3a549c5"
+    },
+    "productivity/google-workspace": {
+      "name": "google-workspace",
+      "display_name": "谷歌办公服务",
+      "description": "通过命令行或程序使用邮件、日历、云盘和办公文档。",
+      "source_description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+      "source_display_name": "",
+      "source_sha256": "c668c27fd9861228a33fcbe931334d8f3f117c4be74671b81a840da8392bf40f",
+      "category": "productivity",
+      "source_body_sha256": "e7f77efd52d9c1aebf6ed8825916fffa16c0ff9b5a1b21d3591a13e512726e77"
+    },
+    "productivity/maps": {
+      "name": "maps",
+      "display_name": "地图与路线查询",
+      "description": "查询地理坐标、兴趣点、路线和时区。",
+      "source_description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+      "source_display_name": "",
+      "source_sha256": "8c961ecf662838e3ff287570d343db8b1587ca7a6d565ec53eeab13f89407b29",
+      "category": "productivity",
+      "source_body_sha256": "0563c5ee533bd35c1102801c7287d4d0b5361dc656ee0286e4d5d562620a60af"
+    },
+    "productivity/meeting-action-items": {
+      "name": "meeting-action-items",
+      "display_name": "会议行动项整理",
+      "description": "从会议记录提取决策、负责人和任务，并注明依据。",
+      "source_description": "Turn meeting notes into cited decisions, owners, tickets.",
+      "source_display_name": "",
+      "source_sha256": "1902f782551da96ee1f9b34d6f13af627f06150a498d874b0cc2a75d06d35aa8",
+      "category": "productivity",
+      "source_body_sha256": "1928053068b6e643e926e7c15c9d01dffe148821496bcd8765fede887167a728"
+    },
+    "productivity/nano-pdf": {
+      "name": "nano-pdf",
+      "display_name": "自然语言文档编辑",
+      "description": "用自然语言提示编辑现有便携文档中的文字。",
+      "source_description": "Edit text in existing PDFs via natural-language prompts.",
+      "source_display_name": "",
+      "source_sha256": "48559bde56c1920e3c2856d3864d0bd67ab06ffef08e44a9d393b7215aa25a98",
+      "category": "productivity",
+      "source_body_sha256": "0488a6eb8b5cd5e8935cd03ad46ce9158086a848df3fd6424b1320d75d203ab8"
+    },
+    "productivity/notion": {
+      "name": "notion",
+      "display_name": "在线知识库管理",
+      "description": "管理在线知识库的页面、数据库和文档内容。",
+      "source_description": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+      "source_display_name": "",
+      "source_sha256": "072d87132551d2f9f7c14a70e9d294beedb866d035f4d61302a3ce92c69c87a9",
+      "category": "productivity",
+      "source_body_sha256": "1f8f02e3675c2c4d031dcad51ffc4cd5fc60f8ac4b7c575b76a86637a718fea4"
+    },
+    "productivity/ocr-and-documents": {
+      "name": "ocr-and-documents",
+      "display_name": "文档与扫描文字识别",
+      "description": "从便携文档和扫描件提取文字。",
+      "source_description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+      "source_display_name": "",
+      "source_sha256": "4d1295d97f1793928713c5cde723ad87ee2dfa9a9acb684afadb9c0202c05384",
+      "category": "productivity",
+      "source_body_sha256": "1a742533974094a4cdd54e50771a88a27a2bf581dc152c7cac76e2e260da067b"
+    },
+    "productivity/pdf": {
+      "name": "pdf",
+      "display_name": "便携文档处理",
+      "description": "创建、读取、合并、填写和保护便携文档。",
+      "source_description": "Create, read, merge, fill, and secure PDF files.",
+      "source_display_name": "",
+      "source_sha256": "947e71440d0cdbaa4df717900d9e59e95762975b7a36930275312b589a23ceb9",
+      "category": "productivity",
+      "source_body_sha256": "8c763446fd9a16645001749fc472e680d1db76f726f82da99b42f12d34d65ffb"
+    },
+    "productivity/powerpoint": {
+      "name": "powerpoint",
+      "display_name": "演示文稿处理",
+      "description": "创建、读取和编辑演示文稿。",
+      "source_description": "Create, read, edit .pptx decks with python-pptx.",
+      "source_display_name": "",
+      "source_sha256": "6a6c4ef12b188c2e3b0679643f533af29e30c2e767d0435f05ed300efc5910af",
+      "category": "productivity",
+      "source_body_sha256": "38eefd71dc71de1e99bbbd8e6207290a06bb8e2e9943813e7465854222196746"
+    },
+    "productivity/product-price-monitor": {
+      "name": "product-price-monitor",
+      "display_name": "价格监测",
+      "description": "跟踪商品、航班或挂牌价格，达到目标时提醒。",
+      "source_description": "Watch product, flight, or listing prices; alert on target.",
+      "source_display_name": "",
+      "source_sha256": "b87bf2102fed13d2c7c64759fa153f24f5e43a0afcf6f8ec5e13def92a6642ef",
+      "category": "productivity",
+      "source_body_sha256": "10d20d150850fca5a29a3db1bff787c699d1e44ee675879a410b715851c1970b"
+    },
+    "productivity/teams-meeting-pipeline": {
+      "name": "teams-meeting-pipeline",
+      "display_name": "协作会议处理",
+      "description": "整理协作平台会议摘要，处理任务重放和订阅。",
+      "source_description": "Teams meeting summaries, job replay, Graph subscriptions.",
+      "source_display_name": "",
+      "source_sha256": "0c0868dbc1efebe559b8584d4a52d5a29b4719867b6068177fdeb0cf9372843d",
+      "category": "productivity",
+      "source_body_sha256": "25a84b443de99e892e875f053f6e2ad8b1d6429df43c590d66814320335c05e2"
+    },
+    "productivity/weekly-review-planning": {
+      "name": "weekly-review-planning",
+      "display_name": "周复盘与计划",
+      "description": "梳理承诺、停滞事项和下周行动计划。",
+      "source_description": "Weekly reset: commitments, stalled work, next-week plan.",
+      "source_display_name": "",
+      "source_sha256": "a689257facb937cfca9bc5507dd9e729f287f0cd3f6abbf73448eb25f73fbaab",
+      "category": "productivity",
+      "source_body_sha256": "aa2e0e355685ea1cd9f1cf5a46719bf4dfd1c87642276f267c1102af6e4b54d3"
+    },
+    "productivity/xlsx": {
+      "name": "xlsx",
+      "display_name": "电子表格处理",
+      "description": "创建、读取和编辑电子表格与逗号分隔数据。",
+      "source_description": "Create, read, edit Excel .xlsx workbooks and CSVs.",
+      "source_display_name": "",
+      "source_sha256": "b302d7ac997843a757ab3c11513ea012889ebdae32f842edb44faa9a4485f19b",
+      "category": "productivity",
+      "source_body_sha256": "f523a3001ad5b3c22e6c12b1b8225d4e520ffcacaf504d78004935924ece29ea"
+    },
+    "research/arxiv": {
+      "name": "arxiv",
+      "display_name": "预印本论文检索",
+      "description": "按关键词、作者、分类或编号检索预印本论文。",
+      "source_description": "Search arXiv papers by keyword, author, category, or ID.",
+      "source_display_name": "",
+      "source_sha256": "2a6073a1ad08823dbdf26be64440b54155298db38fdee52c7b0a5d1cd0cfb05d",
+      "category": "research",
+      "source_body_sha256": "ab60781e6b842c6b2a370a95d74deef064feb85a29ac7e637cfde0445d710940"
+    },
+    "research/blogwatcher": {
+      "name": "blogwatcher",
+      "display_name": "博客与订阅监测",
+      "description": "跟踪博客和信息订阅源的更新。",
+      "source_description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+      "source_display_name": "",
+      "source_sha256": "b85be5a9b86b90287266dd142a0ae9740be926298fbcb772f56b8a4d6451bb12",
+      "category": "research",
+      "source_body_sha256": "da6e50694b61b439af5a719e9fe9f69f2fca9b5bc77cdd61e066bd4dcc4074cd"
+    },
+    "research/competitor-news-monitor": {
+      "name": "competitor-news-monitor",
+      "display_name": "竞品新闻监测",
+      "description": "跟踪指定公司的重要新闻，并生成带引用的摘要。",
+      "source_description": "Watch named companies for material news; cited digests.",
+      "source_display_name": "",
+      "source_sha256": "bcc92cdcb4811ec2a8b6b13527b952552fccfc2a749837dfee24a8b561415cef",
+      "category": "research",
+      "source_body_sha256": "b082316aa0757ed750069ec6becb2ce73d13ea988cee501b9f425905005bf5e1"
+    },
+    "research/grounded-citations": {
+      "name": "grounded-citations",
+      "display_name": "可靠来源引用",
+      "description": "用可核查来源支撑回答和文档内容。",
+      "source_description": "Ground answers and documents in cited, verifiable sources.",
+      "source_display_name": "",
+      "source_sha256": "e244361021acc9d41efc230df739130c5545bb86dba5af37aa0d1a878c6c59ea",
+      "category": "research",
+      "source_body_sha256": "c31e98677a5335fbad2b96a6082356b9fc8b12f4dd69221aac2c0d8a477d52c0"
+    },
+    "research/llm-wiki": {
+      "name": "llm-wiki",
+      "display_name": "互联知识库构建",
+      "description": "构建、查询由相互链接的文档组成的知识库。",
+      "source_description": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
+      "source_display_name": "",
+      "source_sha256": "0229e37c1783fcac5b77cfb3242703666cf4aa472d2ae85b6bd5279756b515b6",
+      "category": "research",
+      "source_body_sha256": "082deaf7589a19a1c2cf9251470906c89373d56d1919adaeabcb2b8c0c5ad55d"
+    },
+    "smart-home/openhue": {
+      "name": "openhue",
+      "display_name": "智能灯光控制",
+      "description": "通过命令行控制智能灯光、场景与房间。",
+      "source_description": "Control Philips Hue lights, scenes, rooms via OpenHue CLI.",
+      "source_display_name": "",
+      "source_sha256": "69043ef388b92f5d73f3c72a1bf3b108cfc135d1bf8c0e9721cfc9b39fddf8ed",
+      "category": "smart-home",
+      "source_body_sha256": "f820be648d3e193c5f4f46d8a2e082d0c5605daf3803d7ba4189506915cce8d0"
+    },
+    "social-media/xurl": {
+      "name": "xurl",
+      "display_name": "社交平台操作",
+      "description": "通过命令行搜索和发布社交内容，处理私信与媒体。",
+      "source_description": "X/Twitter via xurl CLI: raw post search, posting, DM, media.",
+      "source_display_name": "",
+      "source_sha256": "92d9cb8efa0a3de6cc268f2ade63cf3bc54986cc1746dc465de0fe84ec9fed40",
+      "category": "social-media",
+      "source_body_sha256": "e4853f061ea4dda4efcd39da08b8177a7b305cd30a883bace46b4cbce212007b"
+    },
+    "software-development/dogfood": {
+      "name": "dogfood",
+      "display_name": "网页探索测试",
+      "description": "探索网页应用的问题，记录证据并整理测试报告。",
+      "source_description": "Exploratory QA of web apps: find bugs, evidence, reports.",
+      "source_display_name": "",
+      "source_sha256": "1b2793734493dbc624a1d1f1c0667cb510e191fa79b1c740d866706550190560",
+      "category": "software-development",
+      "source_body_sha256": "ff25e9a99eec71820ad6360a037c334bd31596bd41c4315582919a09dc10f641"
+    },
+    "software-development/hermes-agent-skill-authoring": {
+      "name": "hermes-agent-skill-authoring",
+      "display_name": "技能编写规范",
+      "description": "说明技能文件格式、中文展示名称与内容结构规范。",
+      "source_description": "新建或修改技能（SKILL.md）时读：格式、中文展示名与结构规范。",
+      "source_display_name": "技能编写规范",
+      "source_sha256": "5c5e2e37a30ebbb674723f81eb68f6ad33edcce2bf3e4906f99d8221434e4173",
+      "category": "software-development",
+      "source_body_sha256": "2b67bd220b628a7425df9726bdaa83f4da3a8fdd3f50ad89d898d38554796145"
+    },
+    "software-development/inspecting-hermes-desktop-dom": {
+      "name": "inspecting-hermes-desktop-dom",
+      "display_name": "工作台界面检查",
+      "description": "通过调试协议读取工作台实时页面结构与样式。",
+      "source_description": "Read the live 工作台 desktop DOM/CSS over CDP.",
+      "source_display_name": "",
+      "source_sha256": "86a2b48de0b6e245e0101c92a71efed2c05e111bfe92768d057e05dea2023e04",
+      "category": "software-development",
+      "source_body_sha256": "44230ddc866b6fa66cbc0074614d459ed06b2ad11ceb0eee379434aea5bc48f1"
+    },
+    "software-development/node-inspect-debugger": {
+      "name": "node-inspect-debugger",
+      "display_name": "脚本运行时调试",
+      "description": "使用检查接口和浏览器调试协议诊断脚本程序。",
+      "source_description": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+      "source_display_name": "",
+      "source_sha256": "82e96a17665972386affbba891246c625271b6876d08667f2665db585882a9e5",
+      "category": "software-development",
+      "source_body_sha256": "20f623e90ebca358d42a4134d3fe7266af50f9ef2eb073246d9c3b06a094b20b"
+    },
+    "software-development/plan": {
+      "name": "plan",
+      "display_name": "实施计划编写",
+      "description": "把实施方案保存为文档，仅规划而不执行任务。",
+      "source_description": "Write a markdown plan to .hermes/plans/; no execution.",
+      "source_display_name": "",
+      "source_sha256": "daa6a33935034220459a21bdee15996056c51943f88c98521098feba9e434c05",
+      "category": "software-development",
+      "source_body_sha256": "e1dc23030c394f1cc116dee99622ec534ceb4d2704a444efbfb63bdb91c1f9c9"
+    },
+    "software-development/python-debugpy": {
+      "name": "python-debugpy",
+      "display_name": "程序断点调试",
+      "description": "使用交互式调试器和远程断点调试程序。",
+      "source_description": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "source_display_name": "",
+      "source_sha256": "775e96f10a96dd7d0fe4439b962ca79a7809f5bc30ccbf050070f75a0051f608",
+      "category": "software-development",
+      "source_body_sha256": "86708437d3f0c71d789a5b2d16bc6b02c32c5aaa1df8de4d173f1f2a4333ba45"
+    },
+    "software-development/requesting-code-review": {
+      "name": "requesting-code-review",
+      "display_name": "提交前代码检查",
+      "description": "在提交前检查安全与质量问题，并修复可处理项。",
+      "source_description": "Pre-commit review: security scan, quality gates, auto-fix.",
+      "source_display_name": "",
+      "source_sha256": "1126afb626b38f5b398afac61de1c2c5551913d020f7c745e5468a78f143bcfd",
+      "category": "software-development",
+      "source_body_sha256": "e26049f9a37fdff1f67d086a7c6dc61de9f339629bd6acd42439855accd02472"
+    },
+    "software-development/simplify-code": {
+      "name": "simplify-code",
+      "display_name": "代码简化审查",
+      "description": "并行审查近期修改，清理重复和不必要的代码。",
+      "source_description": "Parallel 4-agent cleanup of recent code changes.",
+      "source_display_name": "",
+      "source_sha256": "c259970bff23997a9b395f514af12723e33218fca97f529b5e0fa914ac72660e",
+      "category": "software-development",
+      "source_body_sha256": "87231b9c477e96f10bdcb0305556ac2ed012a7e80c459e672d73d33d2eb0483a"
+    },
+    "software-development/spike": {
+      "name": "spike",
+      "display_name": "技术可行性实验",
+      "description": "通过可丢弃的小实验验证方案，再决定正式实现。",
+      "source_description": "Throwaway experiments to validate an idea before build.",
+      "source_display_name": "",
+      "source_sha256": "a1cf0cef01c5f566fb757eed40e09a42a7854958def740e5fc115ebe66e11acd",
+      "category": "software-development",
+      "source_body_sha256": "97ea3f3cd78725790cb8da3bf93da31191bc2de7ded8c7336720ab1f65aa1eb9"
+    },
+    "software-development/systematic-debugging": {
+      "name": "systematic-debugging",
+      "display_name": "系统化问题诊断",
+      "description": "分阶段调查根因、验证假设并修复问题。",
+      "source_description": "4-phase root cause debugging: understand bugs before fixing.",
+      "source_display_name": "",
+      "source_sha256": "bc0da4a6c2d0c6b9341056cbcfa102fb6490529d83edeb7eb2e4cd32e9dee694",
+      "category": "software-development",
+      "source_body_sha256": "dfae30758630c5f8b238b8a28525e444ac1358c7062ba4455d05512fc4312c95"
+    },
+    "software-development/test-driven-development": {
+      "name": "test-driven-development",
+      "display_name": "测试驱动开发",
+      "description": "先编写失败测试，再实现功能并整理代码。",
+      "source_description": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+      "source_display_name": "",
+      "source_sha256": "99ef3ae9686bcd0af639525a1c6f8ae8a940f37ca73510e810203aed9babac5d",
+      "category": "software-development",
+      "source_body_sha256": "e5e72521211f18ba57a9936d0cbe3a05c83027466e122eb98ce8a13b9bb15dfa"
+    },
+    "local-web-search": {
+      "name": "local-web-search",
+      "display_name": "网页搜索助手",
+      "description": "只读搜索公开网页、提取正文并引用来源，帮助核实最新信息。",
+      "source_description": "只读搜索公开网页、提取正文并引用来源，帮助核实最新信息。",
+      "source_display_name": "网页搜索助手",
+      "source_sha256": "2fedefccf6a9d0bfe60eff090db05c7ff9fece3a0bb8e87d5f08bff47cb3c35f",
+      "category": "general",
+      "source_body_sha256": "b39f898383c687643a38f59c5e28e8874200c248c7b1dca3df9c432a75d68432"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "brandId": "llano-ai-workbench",
+  "deepLinkProtocol": "llano-agent",
+  "productName": "LLANO Agent",
+  "companyName": "LLANO Agent",
+  "providerId": "llano-gateway",
+  "providerName": "公司 AI 网关",
+  "skillHubUrl": "",
+  "defaultLanguage": "zh",
+  "managedImageGeneration": true,
+  "syncSkillUsage": true,
+  "allowedMessagingPlatforms": [],
+  "disabledCapabilities": [
+    "nous_services",
+    "self_update",
+    "provider_management",
+    "provider_oauth",
+    "custom_model_providers",
+    "moa",
+    "builtin_image_generation",
+    "pet_ai_generation"
+  ],
+  "environments": {
+    "development": {
+      "gatewayOrigin": "http://127.0.0.1:7899",
+      "modelApiBaseUrl": "http://127.0.0.1:7899/v1",
+      "updateManifestUrl": "http://127.0.0.1:7899/v1/client-update",
+      "updateSigningPublicKey": "1AaTJvXt1VYX/GIPusE4piA71VqMx5wJbQAikeU6x+k="
+    },
+    "test": {
+      "gatewayOrigin": "http://gateway.example.invalid:7899",
+      "modelApiBaseUrl": "http://gateway.example.invalid:7899/v1",
+      "updateManifestUrl": "http://gateway.example.invalid:7899/v1/client-update",
+      "updateSigningPublicKey": "1AaTJvXt1VYX/GIPusE4piA71VqMx5wJbQAikeU6x+k="
+    },
+    "production": {
+      "gatewayOrigin": "https://gateway.example.invalid",
+      "modelApiBaseUrl": "https://gateway.example.invalid/v1",
+      "updateManifestUrl": "https://gateway.example.invalid/v1/client-update",
+      "artifactOrigins": [],
+      "updateSigningPublicKey": "1AaTJvXt1VYX/GIPusE4piA71VqMx5wJbQAikeU6x+k="
+    }
+  }
+}

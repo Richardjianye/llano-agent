@@ -1,0 +1,6 @@
+# Windows-specific core dependencies from pyproject.toml
+tzdata
+winpty
+win32security
+win32file
+concurrent_log_handler

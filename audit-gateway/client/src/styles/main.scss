@@ -1,0 +1,135 @@
+/* ============================================================
+   主题语义排版类（自建，别删）
+
+   ⚠️ 背景：`src/styles/settings.scss` 里设了 `$utilities: false`，
+   Vuetify 的 SASS 工具类**一个都不会被编译出来** —— 包括布局类
+   （d-flex / ga-* / w-100 / flex-grow-1 / align-* / justify-*）
+   和排版类（text-caption / text-subtitle-1 / text-medium-emphasis /
+   font-weight-* ）。写了也是空类名，没有任何样式。
+
+   布局类已全面改用 Tailwind（决策 #24）。但下面这几个排版类带主题语义
+   （字号阶梯、强调层级要跟着深浅主题走），Tailwind 没有等价物，
+   所以在这里按 Vuetify 的定义重建一份 —— 十几行，完全可控，
+   且不必为此把整套 Vuetify utilities（几百 KB）重新打开。
+
+   ⚠️ 不要试图通过改 `$utilities` 来「修好」这些类：那会把布局类一起放回来，
+   和 Tailwind 形成两套并行且部分冲突的工具类体系，正是决策 #24 要避免的。
+
+   注意与另一个同名开关区分：`plugins/vuetify.ts` 里的 `theme.utilities`
+   **必须保持 true**，那个管的是运行时生成的 `bg-primary` / `text-primary`
+   颜色类，关掉会让所有组件的 color 属性静默失效。两者同名但毫不相干。
+   ============================================================ */
+@layer vuetify-overrides {
+  /* ---- 字号阶梯（对齐 Vuetify 的 typography 定义）---- */
+  .text-h5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 2rem;
+  }
+
+  .text-h6 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    line-height: 1.75rem;
+  }
+
+  .text-subtitle-1 {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.009375em;
+    line-height: 1.75rem;
+  }
+
+  .text-subtitle-2 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.0071428571em;
+    line-height: 1.375rem;
+  }
+
+  .text-body-2 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.0178571429em;
+    line-height: 1.25rem;
+  }
+
+  .text-caption {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.0333333333em;
+    line-height: 1.25rem;
+  }
+
+  /* ---- 强调层级：跟着主题的 on-surface 走，深浅主题都成立 ---- */
+  .text-high-emphasis {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+  }
+
+  .text-medium-emphasis {
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
+  }
+
+  .text-disabled {
+    color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity)) !important;
+  }
+
+  /* ---- 字重：Tailwind 的 font-medium 等价物，但沿用 Vuetify 命名，
+         免得同一份模板里两种命名混着写 ---- */
+  .font-weight-regular { font-weight: 400; }
+  .font-weight-medium  { font-weight: 500; }
+  .font-weight-bold    { font-weight: 700; }
+
+  code, pre, .v-code {
+    font-family: var(--font-mono);
+  }
+
+  /* 行内代码：主题里配了 theme-code / on-code，这里把它用起来，
+     不然深浅主题切换时代码块底色不跟着走。 */
+  code:not(.v-code) {
+    background: rgb(var(--v-theme-surface-light));
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+  }
+
+  /* 表头压一档色阶，和表体拉开层次；粘顶时不会和滚动过来的行糊在一起。 */
+  .v-data-table__th {
+    background: rgb(var(--v-theme-surface-light)) !important;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* 卡片直接包着表格时，表头的圆角要跟卡片对齐，否则四角会露出方角。 */
+  .v-card > .v-table > .v-table__wrapper > table > thead > tr > .v-data-table__th:first-child {
+    border-start-start-radius: inherit;
+  }
+
+  /* 滚动条：默认的浅灰在浅灰底上几乎看不见 */
+  * {
+    scrollbar-color: rgba(var(--v-border-color), 0.28) transparent;
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(var(--v-border-color), 0.28);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--v-border-color), 0.45);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

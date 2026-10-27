@@ -1,0 +1,121 @@
+# 出厂自检清单 —— scripts/build-sidecar.mjs 在构建末尾对着冻结产物逐个 import，
+# 少一个就让构建失败。
+#
+# 为什么需要这份清单：PyInstaller 靠静态分析决定收哪些模块，只在函数体里
+# import 的东西它看不见，而且**不会报警**。实测漏掉过 jinja2 / tenacity / tqdm
+# 三个 pyproject 里精确钉版本的核心依赖，漏了之后 `serve` 照样起来、照样绑端口，
+# 用户点到那个功能才炸。
+#
+# 加新依赖时也往这里加一行；这份清单就是「什么算装齐了」的定义。
+
+# —— 技能安全（阶段 7）。这几个全是**在函数体里**被 import 的（tick 点、
+#    rescan_now 内部），正是静态分析看不见的那种形状 —— 少收了不会报错，
+#    只是定期重扫从此静默失效。
+tools.skill_rescan
+tools.skill_report
+tools.skill_publish
+tools.skill_chinese_metadata
+tools.skill_hub_usage_sync
+tools.llano_image_generation
+tools.skill_quarantine
+tools.skills_guard
+agent.skill_utils
+
+# —— 品牌提示词治理。策略解析本身由 agent_init 引入，但离线基线是在函数体
+#    中延迟 import；明确列入并由冻结产物探针验证，避免安装包在线失败时才发现
+#    bundled fallback 被 PyInstaller 漏收。
+agent.managed_prompt_policy
+hermes_cli.default_prompt_policy
+hermes_cli.default_soul
+
+# —— 后端起得来的最小集
+hermes_cli.main
+hermes_cli.web_server
+hermes_cli.desktop_messaging
+agent
+tools
+toolsets
+providers
+plugins
+gateway
+tui_gateway
+
+# —— HTTP / 服务栈
+fastapi
+starlette
+uvicorn
+httpx
+socksio
+
+# —— 模型调用
+openai
+
+# —— 静态分析漏掉过的（都在 pyproject 的 dependencies 里，不是可选 extra）
+jinja2
+tenacity
+tqdm
+
+# —— 其余核心依赖
+pydantic
+yaml
+requests
+croniter
+fire
+dotenv
+cryptography
+psutil
+rich
+prompt_toolkit
+markdown
+pygments
+jwt
+packaging
+distro
+termcolor
+pathspec
+
+# External tool and multimedia paths must survive freezing.
+truststore
+certifi
+urllib3
+websockets
+ruamel.yaml
+python_multipart
+PIL
+mcp
+tools.mcp_stdio_watchdog
+tools.browser_tool
+tools.computer_use.tool
+tools.environments.local
+
+# Default voice synthesis provider
+edge_tts
+
+# Packaged DingTalk messaging must work without runtime pip installation.
+dingtalk_stream
+dingtalk_stream.frames
+alibabacloud_dingtalk.card_1_0.client
+alibabacloud_dingtalk.card_1_0.models
+alibabacloud_dingtalk.robot_1_0.client
+alibabacloud_dingtalk.robot_1_0.models
+alibabacloud_tea_openapi.models
+alibabacloud_tea_util.models
+qrcode
+
+# Packaged Telegram messaging (plugins/platforms/telegram imports these lazily).
+telegram
+telegram.ext
+telegram.request
+tornado.web
+
+# Packaged Feishu / Lark messaging (plugins/platforms/feishu imports these lazily).
+lark_oapi
+lark_oapi.api.application.v6
+lark_oapi.api.contact.v3
+lark_oapi.api.im.v1
+lark_oapi.core.const
+lark_oapi.core.enum
+lark_oapi.core.model.base_request
+lark_oapi.event.callback.model.p2_card_action_trigger
+lark_oapi.event.dispatcher_handler
+lark_oapi.ws.client

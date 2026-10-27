@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# 环境
+.env.dev
+.env.prod
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志
+logs/
+
+# 静态文件（按需取消注释）
+# static/avatar/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 数据库
+*.db
+*.sqlite3
+private_artifacts/

@@ -1,0 +1,17 @@
+# Additional packaged desktop features. Install into the isolated build venv,
+# alongside the repository core dependencies and PyInstaller.
+mcp==1.28.1
+edge-tts==7.2.7
+# DingTalk is the primary packaged messaging connector. Lazy installation is
+# disabled in branded clients, so keep these aligned with pyproject's extra.
+dingtalk-stream==0.24.3
+alibabacloud-dingtalk==2.2.42
+qrcode==7.4.2
+# Telegram is offered on the messaging page; keep the exact pins from
+# tools/lazy_deps.py "platform.telegram" (tornado 6.5.8 carries the webhook
+# parser security fixes), since branded clients cannot lazy-install it.
+python-telegram-bot[webhooks]==22.6
+tornado==6.5.8
+# Feishu / Lark: same reason, pins from tools/lazy_deps.py "platform.feishu"
+# (qrcode is already listed above for DingTalk).
+lark-oapi==1.6.8

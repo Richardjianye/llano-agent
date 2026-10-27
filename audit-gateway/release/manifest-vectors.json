@@ -1,0 +1,49 @@
+{
+  "_comment": [
+    "更新清单签名的固定向量（golden vectors）。",
+    "网关与客户端各有一份 canonical_manifest_bytes 实现，两边的测试都读这个文件。",
+    "任何一边的规范序列化漂了，对应测试立刻变红——这是唯一能挡住「全量客户端",
+    "同时验签失败」的机制。",
+    "下面的私钥是 bytes(range(32))，公开的测试密钥，与生产签名密钥无关，",
+    "生产私钥只存在于离线签名机上，永远不进仓库、不进网关。"
+  ],
+  "signing_domain": "llano-client-update-manifest-v1",
+  "test_private_key": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=",
+  "test_public_key": "A6EHv/POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg=",
+  "cases": [
+    {
+      "name": "中文与 emoji 必须按 UTF-8 原样进签名",
+      "manifest": {
+        "version": "1.4.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "policy": "required",
+        "min_supported_version": "1.2.0",
+        "artifact_url": "https://gw.example.com/dl/llano-1.4.0-arm64.dmg",
+        "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "artifact_size": 182452224,
+        "release_notes": "修复审计会话折叠；中文与 emoji 🐟 都要进签名",
+        "released_at": "2026-08-24T02:30:00Z"
+      },
+      "canonical": "llano-client-update-manifest-v1\n{\"arch\":\"arm64\",\"artifact_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"artifact_size\":182452224,\"artifact_url\":\"https://gw.example.com/dl/llano-1.4.0-arm64.dmg\",\"min_supported_version\":\"1.2.0\",\"platform\":\"darwin\",\"policy\":\"required\",\"release_notes\":\"修复审计会话折叠；中文与 emoji 🐟 都要进签名\",\"released_at\":\"2026-08-24T02:30:00Z\",\"schema\":1,\"version\":\"1.4.0\"}",
+      "signature": "+0xNLgzrcz7iEWuPs0E13BkQolyAzt4XXQaELmqr52AaLOlm9Ypwcoc7BLQeM+O/ksfcgpKDCzGbDdxbocR4DA=="
+    },
+    {
+      "name": "最小 ASCII 清单：空发行说明、optional 策略",
+      "manifest": {
+        "version": "2",
+        "platform": "win32",
+        "arch": "x64",
+        "policy": "optional",
+        "min_supported_version": "1",
+        "artifact_url": "http://10.0.0.8:7899/dl/llano-2-x64.exe",
+        "artifact_sha256": "000000000000000000000000000000000000000000000000000000000000000f",
+        "artifact_size": 1,
+        "release_notes": "",
+        "released_at": "2026-01-01T00:00:00Z"
+      },
+      "canonical": "llano-client-update-manifest-v1\n{\"arch\":\"x64\",\"artifact_sha256\":\"000000000000000000000000000000000000000000000000000000000000000f\",\"artifact_size\":1,\"artifact_url\":\"http://10.0.0.8:7899/dl/llano-2-x64.exe\",\"min_supported_version\":\"1\",\"platform\":\"win32\",\"policy\":\"optional\",\"release_notes\":\"\",\"released_at\":\"2026-01-01T00:00:00Z\",\"schema\":1,\"version\":\"2\"}",
+      "signature": "ipoDcVasajar4yOUvcWe40KXSVTi0+Fn3Yjg51/WZV/7N9unj63ILoI/QlWmukAVXkQvBNRjRilQfcbQND0oAA=="
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "git": {
+    "id": "git",
+    "label": "Git Bash",
+    "version": "2.55.0.5",
+    "sha256": "d065a4e23c3d9a6b5073d609b5be0830227ec3ca053c083ba385061ddfaf94c6",
+    "size": 65343712,
+    "urls": [
+      "http://192.0.2.130/releases/dependencies/Git-2.55.0.5-64-bit.exe",
+      "https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/LatestRelease/Git-2.55.0.5-64-bit.exe",
+      "https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.5/Git-2.55.0.5-64-bit.exe"
+    ],
+    "prefix": "",
+    "pathDirs": [],
+    "probe": "",
+    "probeArgs": [],
+    "required": true,
+    "format": "file"
+  },
+  "components": [
+    {
+      "id": "python",
+      "label": "Python",
+      "version": "3.13.13",
+      "sha256": "703745dc1c9f98859337a8087518720324e0acf791cf15799b71243d5843bdec",
+      "size": 46928679,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/cpython-3.13.13-windows-x64.tar.gz",
+        "https://github.com/astral-sh/python-build-standalone/releases/download/20260508/cpython-3.13.13+20260508-x86_64-pc-windows-msvc-install_only.tar.gz"
+      ],
+      "prefix": "python/",
+      "pathDirs": [
+        "",
+        "Scripts"
+      ],
+      "probe": "python.exe",
+      "probeArgs": [
+        "-c",
+        "import ssl, sqlite3, venv; print(6 * 7)"
+      ],
+      "required": true,
+      "format": "tar"
+    },
+    {
+      "id": "uv",
+      "label": "uv",
+      "version": "0.12.11",
+      "sha256": "498820071e52b52e7548004459f08180a78c1946c273b9ac6a892ab9f2c4d7d1",
+      "size": 18091914,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/uv-0.12.11-py3-none-win_amd64.whl",
+        "https://files.pythonhosted.org/packages/c4/99/55672db900c519acd10637fcfffbe46c058163e52d5829f988dafb32e144/uv-0.12.11-py3-none-win_amd64.whl"
+      ],
+      "prefix": "",
+      "pathDirs": [
+        "uv-0.12.11.data/scripts"
+      ],
+      "probe": "uv-0.12.11.data/scripts/uv.exe",
+      "probeArgs": [
+        "--version"
+      ],
+      "required": true,
+      "format": "zip"
+    },
+    {
+      "id": "node",
+      "label": "Node.js / npm",
+      "version": "26.8.1",
+      "sha256": "57693d8e93d1b04e7b7de46aca53ecd63e97564e73de36a68428d7ff08d83587",
+      "size": 41368195,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/node-v26.8.1-win-x64.zip",
+        "https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/v26.8.1/node-v26.8.1-win-x64.zip",
+        "https://nodejs.org/dist/v26.8.1/node-v26.8.1-win-x64.zip"
+      ],
+      "prefix": "node-v26.8.1-win-x64/",
+      "pathDirs": [
+        ""
+      ],
+      "probe": "node.exe",
+      "probeArgs": [
+        "--version"
+      ],
+      "required": false,
+      "format": "zip"
+    },
+    {
+      "id": "ripgrep",
+      "label": "文件搜索",
+      "version": "15.1.0",
+      "sha256": "124510b94b6baa3380d051fdf4650eaa80a302c876d611e9dba0b2e18d87493a",
+      "size": 1810687,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/ripgrep-15.1.0-win-x64.zip",
+        "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-pc-windows-msvc.zip"
+      ],
+      "prefix": "ripgrep-15.1.0-x86_64-pc-windows-msvc/",
+      "pathDirs": [
+        ""
+      ],
+      "probe": "rg.exe",
+      "probeArgs": [
+        "--version"
+      ],
+      "required": false,
+      "format": "zip"
+    },
+    {
+      "id": "ffmpeg",
+      "label": "音视频处理",
+      "version": "9.0.1",
+      "sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
+      "size": 111253802,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/ffmpeg-9.0.1-essentials_build.zip",
+        "https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-9.0.1-essentials_build.zip"
+      ],
+      "prefix": "ffmpeg-9.0.1-essentials_build/",
+      "pathDirs": [
+        "bin"
+      ],
+      "probe": "bin/ffmpeg.exe",
+      "probeArgs": [
+        "-version"
+      ],
+      "required": false,
+      "format": "zip"
+    },
+    {
+      "id": "agent-browser",
+      "label": "浏览器操作",
+      "version": "0.26.0",
+      "sha256": "540fc7d8b3ec8dea2f84df605492d5ca0e1921281adf8543dc0326109c851b2a",
+      "size": 10648576,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/agent-browser-0.26.0-win32-x64.exe",
+        "https://github.com/vercel-labs/agent-browser/releases/download/v0.26.0/agent-browser-win32-x64.exe"
+      ],
+      "prefix": "",
+      "pathDirs": [
+        ""
+      ],
+      "probe": "agent-browser.exe",
+      "probeArgs": [
+        "--version"
+      ],
+      "required": false,
+      "format": "file"
+    },
+    {
+      "id": "browser",
+      "label": "浏览器引擎",
+      "version": "153.0.8010.36",
+      "sha256": "8edfaa0923c11a30a9315a5e7e5794c5efb60146edea7e3f749f7fdc2aa026cb",
+      "size": 205134000,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/chrome-153.0.8010.36-win64.zip",
+        "https://storage.googleapis.com/chrome-for-testing-public/153.0.8010.36/win64/chrome-win64.zip"
+      ],
+      "prefix": "chrome-win64/",
+      "pathDirs": [],
+      "probe": "chrome.exe",
+      "probeArgs": [
+        "--headless",
+        "--disable-gpu",
+        "--no-first-run",
+        "--user-data-dir={temp}",
+        "--dump-dom",
+        "data:text/html,<title>runtime-check</title>"
+      ],
+      "required": false,
+      "format": "zip",
+      "browser": "chrome.exe"
+    },
+    {
+      "id": "cua",
+      "label": "电脑操作组件",
+      "version": "0.24.0",
+      "sha256": "1c7197908b13325083337acdd66db7b65df246f65e2b91e2974a079d0773e596",
+      "size": 27922492,
+      "urls": [
+        "http://192.0.2.130/releases/dependencies/cua-driver-rs-0.24.0-windows-x86_64.zip",
+        "https://github.com/trycua/cua/releases/download/cua-driver-rs-v0.24.0/cua-driver-rs-0.24.0-windows-x86_64.zip"
+      ],
+      "prefix": "cua-driver-rs-0.24.0-windows-x86_64/",
+      "pathDirs": [
+        ""
+      ],
+      "probe": "cua-driver.exe",
+      "probeArgs": [
+        "--version"
+      ],
+      "required": false,
+      "format": "zip"
+    }
+  ]
+}

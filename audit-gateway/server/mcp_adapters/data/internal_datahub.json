@@ -1,0 +1,38 @@
+{
+  "capabilities": [
+    {
+      "code": "datahub.report.platform.list",
+      "name": "查询报表平台列表",
+      "domain": "业务分析报表",
+      "method": "POST",
+      "path": "/api/Platform/GetList",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "metadata": {
+        "app_id": "app_example_report",
+        "system_type": "REPORT",
+        "read_only": true
+      }
+    },
+    {
+      "code": "datahub.dcms.brand.list",
+      "name": "查询品牌列表",
+      "domain": "数据资产",
+      "method": "POST",
+      "path": "/api/Brand/GetBrandList",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "metadata": {
+        "app_id": "app_example_dcms",
+        "system_type": "DCMS",
+        "read_only": true
+      }
+    }
+  ]
+}

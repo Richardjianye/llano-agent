@@ -1,0 +1,12 @@
+# Distributions whose dist-info must be frozen with --copy-metadata.
+#
+# Some availability checks read package metadata instead of importing:
+# plugins/platforms/telegram asks tools.lazy_deps.is_available(), which calls
+# importlib.metadata.version(). PyInstaller drops dist-info by default, so the
+# modules can be bundled and the platform still reports its deps as missing.
+# The post-build probe checks each entry with importlib.metadata.
+python-telegram-bot
+tornado
+# plugins/platforms/feishu checks is_available("platform.feishu") the same way.
+lark-oapi
+qrcode

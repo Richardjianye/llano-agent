@@ -1,0 +1,17 @@
+{
+  "apple": "苹果应用",
+  "autonomous-ai-agents": "智能体协作",
+  "creative": "创意设计",
+  "devops": "开发运维",
+  "email": "邮件管理",
+  "github": "代码托管",
+  "media": "媒体处理",
+  "mlops": "模型开发与部署",
+  "note-taking": "笔记管理",
+  "productivity": "办公效率",
+  "research": "研究与检索",
+  "smart-home": "智能家居",
+  "social-media": "社交媒体",
+  "software-development": "软件开发",
+  "general": "通用技能"
+}
